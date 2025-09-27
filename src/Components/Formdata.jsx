@@ -39,6 +39,18 @@ const FormData = () => {
 const data =  await res.json()
 console.log(data)
   };
+  const getuser = async() => {
+    console.log("Form Data:", formData);
+    const res = await fetch("/v1/user/getuser",{
+        method:"GET",
+        credentials:"include",
+        headers:{
+            "Content-Type":"application/json"
+        },
+    })
+const data =  await res.json()
+console.log(data)
+  };
 
   return (
     <div className="max-w-2xl mx-auto bg-white  rounded-2xl p-8">
@@ -155,6 +167,7 @@ console.log(data)
         >
           Send Appointment
         </button>
+        <button onClick={getuser} >getuser</button>
       </form>
     </div>
   );
