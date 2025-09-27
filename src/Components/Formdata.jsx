@@ -28,7 +28,7 @@ const FormData = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     toast.success("Appointment Booked")
-    const res = await fetch("http://localhost:5000/v1/service/addnewservice",{
+    const res = await fetch("/v1/service/addnewservice",{
         method:"POST",
         credentials:"include",
         headers:{
