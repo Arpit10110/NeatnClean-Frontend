@@ -61,7 +61,7 @@ const Otp = ({ phone, name, address,role }) => {
         setMessage({ type: "success", text: "OTP Verified Successfully ✅" });
         console.log("Verified Data:", data);
       
-       navigate('/')
+        window.location.href = '/';
       } else {
         setMessage({
           type: "error",
@@ -84,7 +84,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage({ type: "info", text: "OTP resent successfully 🔄" });
 
     try {
-      await fetch(`/api//v1/user/generateotp`, {
+      await fetch(`/api/v1/user/generateotp`, {
         method: "POST",
         credentials:"include",
         headers: { "Content-Type": "application/json" },

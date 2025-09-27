@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const [istoken, setistoken] = useState(false);
+
+  useEffect(() => {
+    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+      const [name, value] = cookie.trim().split('=');
+      acc[name] = value;
+      if(name === "access_token"){
+        setistoken(true)
+      }
+    }, {});
+  }, []);
+
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-blue-600">Cleanify</h1>
+        <h1 className="text-2xl font-bold text-blue-600">NeatnClean</h1>
 
         {/* Nav Links */}
         <nav className="hidden md:flex space-x-8 font-medium text-gray-700">
@@ -30,7 +43,7 @@ const Header = () => {
           >
             Services
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/subscription"
             className={({ isActive }) =>
               `hover:text-blue-600 transition ${
@@ -39,7 +52,7 @@ const Header = () => {
             }
           >
             Subscription
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -50,7 +63,7 @@ const Header = () => {
           >
          About
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/how-it-works"
             className={({ isActive }) =>
               `hover:text-blue-600 transition ${
@@ -59,8 +72,19 @@ const Header = () => {
             }
           >
             How It Works
-          </NavLink>
-          <NavLink
+          </NavLink> */}
+          {
+            istoken ? 
+            <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              `hover:text-blue-600 transition ${
+                isActive ? "text-blue-600 font-semibold" : ""
+              } font-bold`
+            }
+          >
+            Profile
+          </NavLink> : <NavLink
             to="/user/login"
             className={({ isActive }) =>
               `hover:text-blue-600 transition ${
@@ -70,7 +94,8 @@ const Header = () => {
           >
             Login
           </NavLink>
-          <NavLink
+          }
+          {/* <NavLink
             to="/worker/login"
             className={({ isActive }) =>
               `hover:text-blue-600 transition ${
@@ -79,8 +104,8 @@ const Header = () => {
             }
           >
             Worker Login
-          </NavLink>
-          <NavLink
+          </NavLink> */}
+          {/* <NavLink
             to="/contacts"
             className={({ isActive }) =>
               `hover:text-blue-600 transition ${
@@ -89,7 +114,7 @@ const Header = () => {
             }
           >
           Contacts
-          </NavLink>
+          </NavLink> */}
         </nav>
 
         {/* CTA Button */}

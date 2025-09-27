@@ -27,7 +27,6 @@ const FormData = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
-    toast.success("Appointment Booked")
     const res = await fetch("/api/v1/service/addnewservice",{
         method:"POST",
         credentials:"include",
@@ -36,25 +35,15 @@ const FormData = () => {
         },
         body:JSON.stringify(formData)
     })
-const data =  await res.json()
-console.log(data)
+  const data =  await res.json()
+  toast.success("Appointment Booked")
+  console.log(data)
   };
-  const getuser = async() => {
-    console.log("Form Data:", formData);
-    const res = await fetch("/api/v1/user/getuser",{
-        method:"GET",
-        credentials:"include",
-        headers:{
-            "Content-Type":"application/json"
-        },
-    })
-const data =  await res.json()
-console.log(data)
-  };
+ 
+
 
   return (
     <div className="max-w-2xl mx-auto bg-white  rounded-2xl p-8">
-        <button onClick={getuser} >getuser</button>
       
       <form onSubmit={handleSubmit} className="grid gap-6">
         {/* Service */}

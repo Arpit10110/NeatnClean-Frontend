@@ -16,6 +16,7 @@ import UserDetails from "./Components/UserDetails";
 import AppointmentForm from "./Pages/AppointmentForm";
 import About from "./Pages/About";
 import ResidentialCleaning from "./Pages/ResidentialCleaning";
+import Profile from "./Pages/Profile";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
   <Route path="/admin/user" element={<UserDetails />} />
   <Route path="/book-service" element={<AppointmentForm/>}/>
   <Route path="/services/residential-cleaning" element={<ResidentialCleaning/>} />
+  <Route path="/profile" element={<Profile/>} />
 </Routes>
 
 
