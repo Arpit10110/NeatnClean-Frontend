@@ -54,6 +54,7 @@ console.log(data)
 
   return (
     <div className="max-w-2xl mx-auto bg-white  rounded-2xl p-8">
+        <button onClick={getuser} >getuser</button>
       
       <form onSubmit={handleSubmit} className="grid gap-6">
         {/* Service */}
@@ -167,7 +168,6 @@ console.log(data)
         >
           Send Appointment
         </button>
-        <button onClick={getuser} >getuser</button>
       </form>
     </div>
   );
