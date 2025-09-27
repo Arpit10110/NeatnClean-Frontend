@@ -41,7 +41,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage(null);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}v1/user/verifyotp`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/v1/user/verifyotp`, {
         method: "POST",
         credentials:"include",
         headers: { "Content-Type": "application/json" },
