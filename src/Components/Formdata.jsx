@@ -28,7 +28,7 @@ const FormData = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     toast.success("Appointment Booked")
-    const res = await fetch("/v1/service/addnewservice",{
+    const res = await fetch("/api/v1/service/addnewservice",{
         method:"POST",
         credentials:"include",
         headers:{
@@ -41,7 +41,7 @@ console.log(data)
   };
   const getuser = async() => {
     console.log("Form Data:", formData);
-    const res = await fetch("/v1/user/getuser",{
+    const res = await fetch("/api/v1/user/getuser",{
         method:"GET",
         credentials:"include",
         headers:{
