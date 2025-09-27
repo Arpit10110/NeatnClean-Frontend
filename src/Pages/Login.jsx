@@ -44,7 +44,7 @@ useEffect(()=>{
         modifiedNumber = `91${user.phone}`;
       }
 
-      const res = await fetch("http://localhost:5000/v1/user/generateotp", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/v1/user/generateotp`, {
         method: "POST",
         credentials:"include",
         headers: {

@@ -41,7 +41,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage(null);
 
     try {
-      const res = await fetch("http://localhost:5000/v1/user/verifyotp", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}v1/user/verifyotp`, {
         method: "POST",
         credentials:"include",
         headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage({ type: "info", text: "OTP resent successfully 🔄" });
 
     try {
-      await fetch("http://localhost:5000/v1/user/generateotp", {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/v1/user/generateotp`, {
         method: "POST",
         credentials:"include",
         headers: { "Content-Type": "application/json" },
