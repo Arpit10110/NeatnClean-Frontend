@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import FormData from "../Components/Formdata";
 import booking from "../assets/booking.webp";
-
+import { useNavigate } from "react-router-dom";
 const AppointmentForm = () => {
+  const navigate = useNavigate();
+    useEffect(() => {
+      const cookies = document.cookie.split(";").reduce((acc, cookie) => {
+        const [name, value] = cookie.trim().split("=");
+        acc[name] = value;
+        if (name != "access_token") {
+         navigate("/user/login")
+        }
+      }, {});
+    }, []);
   return (
     <>
       <div className="border w-full min-h-screen flex justify-center items-center bg-[#0A3F87] flex-col gap-10 px-4 py-10">

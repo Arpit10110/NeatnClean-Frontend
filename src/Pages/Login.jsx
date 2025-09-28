@@ -22,9 +22,8 @@ const Login = () => {
     } else {
       setRole(id);
     }
-    // Reset OTP state when switching between roles
     setOtpSent(false);
-  }, [id, navigate]); // Add id as dependency
+  }, [id, navigate]); 
 
   const handleChange = (e) => {
     let name = e.target.name;
