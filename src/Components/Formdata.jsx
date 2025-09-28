@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const FormData = () => {
+  const Navigate = useNavigate()
   const [formData, setFormData] = useState({
     service: "",
     date: new Date(),
@@ -38,6 +40,7 @@ const FormData = () => {
   const data =  await res.json()
   if(data.success){
     toast.success("Appointment Booked")
+    Navigate("/profile")
   }else{
     toast.warn(data.message)
 
