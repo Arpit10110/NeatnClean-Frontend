@@ -17,7 +17,7 @@ const Otp = ({ phone, name, address,role }) => {
 
   let modifiedNumber = phone;
   if (phone?.toString().startsWith("9") && phone.length === 10) {
-    modifiedNumber = `+91${phone}`;
+    modifiedNumber = `91${phone}`;
   }
 
   useEffect(() => {
@@ -41,6 +41,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage(null);
 
     try {
+      console.log(modifiedNumber)
       const res = await fetch(`/api/v1/user/verifyotp`, {
         method: "POST",
         credentials:"include",

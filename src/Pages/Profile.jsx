@@ -41,6 +41,9 @@ const Profile = () => {
       const data = await response.json();
       
       if (data.success) {
+        if(data.user.role == "worker"){
+          navigate('/worker/profile');
+        }
         setUser(data.user);
       } else {
         navigate('/user/login');

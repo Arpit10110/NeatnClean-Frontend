@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Otp from "../Components/Otp";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams,useNavigate, NavLink } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -71,11 +71,35 @@ useEffect(()=>{
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-100 to-green-100 p-4">
+    <>
+    <div className="pt-[3rem] flex items-center justify-center bg-gradient-to-br from-teal-100 to-green-100 p-4">
       {otpSent ? (
         <Otp phone={user.phone} name={user.name} address={user.address} role={role}/>
       ) : (
-      
+      <div className="flex flex-col gap-[1rem] w-full justify-center items-center ">
+        <div className="flex gap-[2rem] items-center " >
+          <NavLink
+                to="/user/login"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 transition ${
+                    isActive ? "text-blue-600 font-semibold" : ""
+                  } font-bold  bg-[#d8d8d8] rounded-[5px] px-[1rem] py-[0.3rem] `
+                }
+              >
+                 User
+          </NavLink>
+          <NavLink
+                to="/worker/login"
+                className={({ isActive }) =>
+                  `hover:text-blue-600 transition ${
+                    isActive ? "text-blue-600 font-semibold" : ""
+                  } font-bold bg-[#d8d8d8] rounded-[5px] px-[1rem] py-[0.3rem] `
+                }
+              >
+                 Worker
+          </NavLink>
+        </div>
+
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-lg rounded-2xl w-full max-w-md p-8 space-y-6"
@@ -162,9 +186,10 @@ useEffect(()=>{
             {loading ? "Sending..." : "SEND OTP"}
           </button>
         </form>
-        
+      </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -23,7 +23,7 @@ const KycForm = () => {
     formData.append("image", file);
 
     try {
-      const res = await fetch("http://localhost:5000/v1/worker/upload", {
+      const res = await fetch("/apiv1/worker/upload", {
         method: "POST",
         body: formData,
       });
@@ -69,7 +69,7 @@ const KycForm = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/v1/worker/submitkyc", {
+      const res = await fetch("/api/v1/worker/submitkyc", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

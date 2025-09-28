@@ -22,6 +22,8 @@ import Deep from "./Pages/Deep";
 import Commercial from "./Pages/Commercial";
 import Carpet from "./Pages/Carpet";
 import Post from "./Pages/Post";
+import WorkerProfile from "./Pages/WorkerProfile";
+import UploadKyc from "./Pages/UploadKyc";
 
 const App = () => {
   return (
@@ -49,6 +51,8 @@ const App = () => {
   <Route path="/services/post-construction-cleaning" element={<Post/>}/>
   <Route path="/services/deep-cleaning" element={<Deep/>}/>
    <Route path="/profile" element={<Profile/>} />
+   <Route path="/worker/profile" element={<WorkerProfile/>} />
+   <Route path="/worker/uploadKyc" element={<UploadKyc/>} />
 </Routes>
 
 
