@@ -5,15 +5,16 @@ import service3 from '../assets/service-3.webp'
 import service4 from '../assets/service-4.webp'
 import service5 from '../assets/service-5.webp'
 import service6 from '../assets/service-6.webp'
+import { NavLink } from 'react-router-dom'
 
 const Cards = () => {
   const arr = [
-    { id: 1, title: "Residential Cleaning", image: service1 },
-    { id: 2, title: "Commercial Cleaning", image: service2 },
-    { id: 3, title: "Deep Cleaning", image: service3 },
+    { id: 1, title: "Residential Cleaning", image: service1,to:'/services/residential-cleaning' },
+    { id: 2, title: "Commercial Cleaning", image: service2,to:'/services/commercial-cleaning' },
+    { id: 3, title: "Deep Cleaning", image: service3,to:'/services/deep-cleaning' },
     { id: 4, title: "Move-In/Move-Out Cleaning", image: service4 },
-    { id: 5, title: "Post-Construction Cleaning", image: service5 },
-    { id: 6, title: "Carpet and Upholstery Cleaning", image: service6 },
+    { id: 5, title: "Post-Construction Cleaning", image: service5,to:'/services/post-construction-cleaning' },
+    { id: 6, title: "Carpet and Upholstery Cleaning", image: service6 ,to:'/services/carpet-and-upholstery-cleaning'},
   ]
 
   return (
@@ -40,9 +41,9 @@ const Cards = () => {
 
             {/* Hidden Button (shows on hover) */}
             <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <button className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg shadow hover:bg-yellow-500">
+              <NavLink to={curElem.to} className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg shadow hover:bg-yellow-500">
                 Read More
-              </button>
+              </NavLink> 
             </div>
           </div>
         ))}

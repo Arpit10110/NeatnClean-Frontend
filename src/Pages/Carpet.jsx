@@ -5,7 +5,7 @@ import bedroom from '../assets/bedroom.webp'
 import kitchen from '../assets/kitchen.webp'
 import bathroom from '../assets/bathroom.webp'
 
-const ResidentialCleaning = () => {
+const Carpet = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -116,4 +116,4 @@ const ResidentialCleaning = () => {
   )
 }
 
-export default ResidentialCleaning
+export default Carpet

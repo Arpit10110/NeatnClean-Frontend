@@ -18,6 +18,11 @@ import About from "./Pages/About";
 import ResidentialCleaning from "./Pages/ResidentialCleaning";
 import Profile from "./Pages/Profile";
 
+import Deep from "./Pages/Deep";
+import Commercial from "./Pages/Commercial";
+import Carpet from "./Pages/Carpet";
+import Post from "./Pages/Post";
+
 const App = () => {
   return (
     <>
@@ -38,8 +43,12 @@ const App = () => {
   <Route path="/admin/worker/kyc" element={<KycStatus />} />
   <Route path="/admin/user" element={<UserDetails />} />
   <Route path="/book-service" element={<AppointmentForm/>}/>
-  <Route path="/services/residential-cleaning" element={<ResidentialCleaning/>} />
-  <Route path="/profile" element={<Profile/>} />
+  <Route path="/services/residential-cleaning" element={<ResidentialCleaning/>}/> 
+  < Route path="/services/commercial-cleaning" element={<Commercial/>}/>
+  <Route path="/services/carpet-and-upholstery-cleaning" element={<Carpet/>}/>
+  <Route path="/services/post-construction-cleaning" element={<Post/>}/>
+  <Route path="/services/deep-cleaning" element={<Deep/>}/>
+   <Route path="/profile" element={<Profile/>} />
 </Routes>
 
 

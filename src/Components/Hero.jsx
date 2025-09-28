@@ -117,7 +117,7 @@ const Hero = () => {
             }}
           >
             <h4 className="text-[#4A90E2] text-xs sm:text-sm font-semibold tracking-wider">
-              ABOUT UCLEAN
+              ABOUT neatNclean
             </h4>
           </motion.div>
         </motion.div>

@@ -207,8 +207,8 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-white">Office Location</h3>
             </div>
             <p className="text-gray-300 ml-7">
-              123 Clean Street, Sparkle City<br />
-              State 12345, Country
+            Jalan complex old exchange road near satyanarayan mandir Sitamarhi<br />
+            843302, India
             </p>
           </motion.div>
 
