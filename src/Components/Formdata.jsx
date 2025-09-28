@@ -36,7 +36,12 @@ const FormData = () => {
         body:JSON.stringify(formData)
     })
   const data =  await res.json()
-  toast.success("Appointment Booked")
+  if(data.success){
+    toast.success("Appointment Booked")
+  }else{
+    toast.warn(data.message)
+
+  }
   console.log(data)
   };
  
