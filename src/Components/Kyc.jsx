@@ -23,7 +23,7 @@ const KycForm = () => {
     formData.append("image", file);
 
     try {
-      const res = await fetch("/apiv1/worker/upload", {
+      const res = await fetch("/api/v1/worker/upload", {
         method: "POST",
         body: formData,
       });

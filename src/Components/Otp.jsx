@@ -41,7 +41,7 @@ const Otp = ({ phone, name, address,role }) => {
     setMessage(null);
 
     try {
-      console.log(modifiedNumber)
+      console.log(role)
       const res = await fetch(`/api/v1/user/verifyotp`, {
         method: "POST",
         credentials:"include",
