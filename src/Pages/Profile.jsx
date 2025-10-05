@@ -28,16 +28,6 @@ const Profile = () => {
         },
       });
 
-      // Fetch orders data
-      const order_response = await fetch('/api/v1/user/getyourorders', {
-        method: 'GET',
-        credentials: 'include', 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      const order_data = await order_response.json();
       const data = await response.json();
       
       if (data.success) {
@@ -47,14 +37,30 @@ const Profile = () => {
         else if(data.user.role == "admin"){
           navigate('/admin');
         }
-        setUser(data.user);
+        else{
+          setUser(data.user);
+          // Fetch orders data
+          const order_response = await fetch('/api/v1/user/getyourorders', {
+            method: 'GET',
+            credentials: 'include', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          const order_data = await order_response.json();
+          
+
+          if (order_data.success) {
+            setOrders(order_data.orders);
+          }
+        }
+
       } else {
         navigate('/user/login');
       }
 
-      if (order_data.success) {
-        setOrders(order_data.orders);
-      }
+    
       
     } catch (err) {
       setError('Network error occurred');
