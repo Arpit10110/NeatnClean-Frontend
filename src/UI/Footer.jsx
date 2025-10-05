@@ -72,7 +72,7 @@ const Footer = () => {
             transition={{ duration: 0.2 }}
           >
             <h1 className="text-2xl lg:text-3xl font-bold text-white">
-              neat<span className="text-yellow-400">N</span>Clean
+              neat<span className="text-yellow-400">N</span>clean
             </h1>
           </motion.div>
 
@@ -248,7 +248,7 @@ const Footer = () => {
             className="text-gray-400 text-sm text-center md:text-left"
             whileHover={{ color: "#D1D5DB" }}
           >
-            © 2025 neatNClean. All rights reserved.
+            © 2025 neatNclean. All rights reserved.
           </motion.p>
           
           <motion.div 

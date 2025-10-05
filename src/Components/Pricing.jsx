@@ -1,6 +1,7 @@
 import React from "react";
 import { services } from "../Helpers/services";
 
+
 const Pricing = () => {
   return (
     <section className="px-4 md:px-8 lg:px-20 py-12 max-w-5xl mx-auto">
@@ -10,6 +11,7 @@ const Pricing = () => {
       <p className="text-center text-gray-600 mb-8">
         Transparent & affordable cleaning solutions for your home and office
       </p>
+
 
       <div className="overflow-x-auto shadow-lg rounded-xl">
         <table className="min-w-full bg-white rounded-xl">
@@ -31,7 +33,7 @@ const Pricing = () => {
                 <td className="py-3 px-4">{service.id}</td>
                 <td className="py-3 px-4 font-medium">{service.name}</td>
                 <td className="py-3 px-4 text-blue-600 font-semibold">
-                  ₹{service.price}
+                  ₹{service.price}<span className="text-red-600">*</span>
                 </td>
               </tr>
             ))}
@@ -41,5 +43,6 @@ const Pricing = () => {
     </section>
   );
 };
+
 
 export default Pricing;
