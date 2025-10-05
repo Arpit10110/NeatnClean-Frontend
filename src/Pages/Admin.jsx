@@ -8,7 +8,7 @@ const Admin = () => {
 
   const getUser = async () => {
     try {
-      const response = await fetch("http://localhost:5000/v1/user/getuser", {
+      const response = await fetch("/api/v1/user/getuser", {
         method: "GET",
         credentials: "include", // Include cookies if needed
         headers: {
