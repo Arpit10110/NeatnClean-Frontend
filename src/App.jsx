@@ -17,6 +17,9 @@ import AppointmentForm from "./Pages/AppointmentForm";
 import About from "./Pages/About";
 import ResidentialCleaning from "./Pages/ResidentialCleaning";
 import Profile from "./Pages/Profile";
+import UserList from "./Pages/UserList.jsx";
+import UserOrder from "./Pages/UserOrder.jsx";
+import WorkerList from "./Pages/workerlist.jsx";
 
 import Deep from "./Pages/Deep";
 import Commercial from "./Pages/Commercial";
@@ -41,7 +44,10 @@ const App = () => {
 
    <Route path="/about" element={<About/>} /> 
   <Route path="/admin" element={<Admin />} />
-  <Route path="/admin/worker" element={<WorkerDetails />} />
+  <Route path="/admin/userlist" element={<UserList />} />
+  <Route path="/admin/userorders" element={<UserOrder />} />
+  <Route path="/admin/workerlist" element={<WorkerList />} />
+  <Route path="/admin/workerapplication" element={<WorkerDetails />} />
   <Route path="/admin/worker/kyc" element={<KycStatus />} />
   <Route path="/admin/user" element={<UserDetails />} />
   <Route path="/book-service" element={<AppointmentForm/>}/>

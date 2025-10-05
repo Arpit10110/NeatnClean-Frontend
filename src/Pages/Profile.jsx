@@ -44,6 +44,9 @@ const Profile = () => {
         if(data.user.role == "worker"){
           navigate('/worker/profile');
         }
+        else if(data.user.role == "admin"){
+          navigate('/admin');
+        }
         setUser(data.user);
       } else {
         navigate('/user/login');

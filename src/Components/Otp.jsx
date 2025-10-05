@@ -8,11 +8,6 @@ const Otp = ({ phone, name, address,role }) => {
   const [timer, setTimer] = useState(120);
   const [canResend, setCanResend] = useState(false);
  
-   
-
- 
- 
-
   const navigate = useNavigate();
 
   let modifiedNumber = phone;
