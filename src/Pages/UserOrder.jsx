@@ -105,7 +105,6 @@ const UserOrder = () => {
       if (data.success) {
         alert('Order updated successfully');
         closeActionModal();
-        // Refresh the orders list
         getAllOrders(status);
       } else {
         alert(data.message || 'Failed to update order');
@@ -127,7 +126,15 @@ const UserOrder = () => {
     });
   };
 
-  // Disable body scroll when modal is open
+  const formatTime = (timeString) => {
+    const date = new Date(timeString);
+    return date.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
+  };
+
   useEffect(() => {
     if (showModal || showActionModal) {
       document.body.style.overflow = 'hidden';
@@ -169,7 +176,6 @@ const UserOrder = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-800">User Orders</h1>
           <p className="text-gray-600 mt-2">
@@ -177,7 +183,6 @@ const UserOrder = () => {
           </p>
         </div>
 
-        {/* Filter Buttons */}
         <div className="mb-6 flex gap-4">
           <button
             onClick={() => handleStatusChange('pending')}
@@ -211,7 +216,6 @@ const UserOrder = () => {
           </button>
         </div>
 
-        {/* Orders Table */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
@@ -264,7 +268,7 @@ const UserOrder = () => {
                         {formatDate(order.date)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                        {order.time}
+                        {formatTime(order.time)}
                       </td>
                       {status !== 'pending' && (
                         <td className="px-6 py-4 whitespace-nowrap">
@@ -326,7 +330,6 @@ const UserOrder = () => {
             onClick={(e) => e.stopPropagation()}
             onWheel={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
             <div className="bg-blue-600 text-white px-6 py-4 rounded-t-lg flex justify-between items-center sticky top-0 z-10">
               <h2 className="text-2xl font-bold">Order Details</h2>
               <button
@@ -337,9 +340,7 @@ const UserOrder = () => {
               </button>
             </div>
 
-            {/* Modal Body - Scrollable Content */}
             <div className="p-6 max-h-[70vh] overflow-y-auto">
-              {/* Order Information */}
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">
                   Order Information
@@ -361,7 +362,7 @@ const UserOrder = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Time</p>
-                    <p className="font-semibold text-gray-900">{selectedOrder.time}</p>
+                    <p className="font-semibold text-gray-900">{formatTime(selectedOrder.time)}</p>
                   </div>
                   <div className="col-span-2">
                     <p className="text-sm text-gray-600">Status</p>
@@ -380,7 +381,6 @@ const UserOrder = () => {
                 </div>
               </div>
 
-              {/* User Information */}
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">
                   User Information
@@ -413,7 +413,6 @@ const UserOrder = () => {
                 </div>
               </div>
 
-              {/* Messages */}
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">
                   Messages
@@ -434,7 +433,6 @@ const UserOrder = () => {
                 </div>
               </div>
 
-              {/* Additional Information */}
               {selectedOrder.feedback_id && (
                 <div>
                   <h3 className="text-lg font-bold text-gray-800 mb-3 border-b pb-2">
@@ -450,7 +448,6 @@ const UserOrder = () => {
               )}
             </div>
 
-            {/* Modal Footer */}
             <div className="bg-gray-50 px-6 py-4 rounded-b-lg flex justify-end sticky bottom-0">
               <button
                 onClick={closeModal}
@@ -473,7 +470,6 @@ const UserOrder = () => {
             className="bg-white rounded-lg shadow-xl max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
             <div className="bg-purple-600 text-white px-6 py-4 rounded-t-lg flex justify-between items-center">
               <h2 className="text-2xl font-bold">Take Action</h2>
               <button
@@ -484,14 +480,12 @@ const UserOrder = () => {
               </button>
             </div>
 
-            {/* Modal Body */}
             <div className="p-6">
               <div className="mb-4">
                 <p className="text-sm text-gray-600 mb-2">Order: {actionOrder.service}</p>
                 <p className="text-sm text-gray-600">User: {actionOrder.user_data?.name}</p>
               </div>
 
-              {/* Dropdown */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Action
@@ -506,7 +500,6 @@ const UserOrder = () => {
                 </select>
               </div>
 
-              {/* Message Input */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Message
@@ -520,7 +513,6 @@ const UserOrder = () => {
                 />
               </div>
 
-              {/* Buttons */}
               <div className="flex gap-3">
                 <button
                   onClick={handleSubmitAction}

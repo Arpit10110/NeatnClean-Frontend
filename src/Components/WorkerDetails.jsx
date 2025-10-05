@@ -13,7 +13,7 @@ const WorkerDetails = () => {
     try {
       console.log(status)
       const res = await fetch(
-        `http://localhost:5000/v1/worker/getallkyc?status=${status}`,
+        `/api/v1/worker/getallkyc?status=${status}`,
         { credentials: "include" }
       );
       const details = await res.json();
