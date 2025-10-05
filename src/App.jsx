@@ -19,14 +19,13 @@ import ResidentialCleaning from "./Pages/ResidentialCleaning";
 import Profile from "./Pages/Profile";
 import UserList from "./Pages/UserList.jsx";
 import UserOrder from "./Pages/UserOrder.jsx";
-import WorkerList from "./Pages/workerlist.jsx";
-
 import Deep from "./Pages/Deep";
 import Commercial from "./Pages/Commercial";
 import Carpet from "./Pages/Carpet";
 import Post from "./Pages/Post";
 import WorkerProfile from "./Pages/WorkerProfile";
 import UploadKyc from "./Pages/UploadKyc";
+import Allworkerlist from "./Pages/Allworkerlist.jsx";
 
 const App = () => {
   return (
@@ -46,7 +45,7 @@ const App = () => {
   <Route path="/admin" element={<Admin />} />
   <Route path="/admin/userlist" element={<UserList />} />
   <Route path="/admin/userorders" element={<UserOrder />} />
-  <Route path="/admin/workerlist" element={<WorkerList />} />
+  <Route path="/admin/workerlist" element={<Allworkerlist />} />
   <Route path="/admin/workerapplication" element={<WorkerDetails />} />
   <Route path="/admin/worker/kyc" element={<KycStatus />} />
   <Route path="/admin/user" element={<UserDetails />} />

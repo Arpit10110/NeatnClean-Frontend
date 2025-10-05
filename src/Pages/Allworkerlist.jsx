@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const WorkerList = () => {
+const Allworkerlist = () => {
   const [workers, setWorkers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -171,4 +171,4 @@ const WorkerList = () => {
   );
 };
 
-export default WorkerList;
+export default Allworkerlist;
