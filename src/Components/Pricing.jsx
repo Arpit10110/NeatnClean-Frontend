@@ -33,7 +33,15 @@ const Pricing = () => {
                 <td className="py-3 px-4">{service.id}</td>
                 <td className="py-3 px-4 font-medium">{service.name}</td>
                 <td className="py-3 px-4 text-blue-600 font-semibold">
-                  ₹{service.price}<span className="text-red-600">*</span>
+                  {
+                    service.price === 0 ?
+                    <>
+                    depend on area<span className="text-red-600">*</span>
+                    </>:
+                    <>
+                      ₹{service.price}<span className="text-red-600">*</span>
+                    </>
+                  }
                 </td>
               </tr>
             ))}

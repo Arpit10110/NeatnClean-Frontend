@@ -7,6 +7,7 @@ import BottomHero from "../Components/BottomHero";
 import HomeService from "../Components/HomeService";
 
 import Pricing from "../Components/Pricing";
+import TermsAndConditions from "../Components/TermsAndConditions";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -118,6 +119,10 @@ const Home = () => {
 
 <div>
   <Pricing/>
+</div>
+
+<div>
+  <TermsAndConditions/>
 </div>
     </>
   );
