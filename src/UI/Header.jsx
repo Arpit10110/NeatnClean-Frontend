@@ -46,12 +46,7 @@ const Header = () => {
           </NavLink>
           <HashLink
             to="/#pricing"
-            className={({ isActive }) =>
-              `hover:text-blue-600 transition ${
-                isActive ? "text-blue-600 font-semibold" : ""
-              } font-bold`
-            }
-          >
+            className="hover:text-blue-600 transition  font-bold">
             Pricing
           </HashLink>
           <NavLink
