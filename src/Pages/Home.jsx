@@ -5,9 +5,10 @@ import { NavLink } from "react-router-dom";
 import Hero from "../Components/Hero";
 import BottomHero from "../Components/BottomHero";
 import HomeService from "../Components/HomeService";
-
 import Pricing from "../Components/Pricing";
 import TermsAndConditions from "../Components/TermsAndConditions";
+import FloatingContactButtons from "../Components/FloatingContactButtons";
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -24,6 +25,12 @@ const item = {
 const Home = () => {
   return (
     <>
+      {/* Floating Contact Buttons */}
+      <FloatingContactButtons 
+        phoneNumber="+917004105221" 
+        whatsappNumber="917004105221" 
+      />
+
       <div
         className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex justify-center items-center flex-col relative"
         style={{ backgroundImage: `url(${diwali})` }}
@@ -60,9 +67,9 @@ const Home = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#3BA9F4"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <circle cx="12" cy="12" r="9" />
               <polyline points="12 7 12 12 15 15" />
@@ -81,9 +88,9 @@ const Home = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="#3BA9F4"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <rect x="3" y="5" width="18" height="16" rx="2" ry="2" />
 
@@ -104,26 +111,25 @@ const Home = () => {
       </div>
 
       <div>
-        <Hero/>
+        <Hero />
       </div>
 
       <div>
-        <BottomHero/>
+        <BottomHero />
       </div>
-  
-  <div className="w-1/2 bg-black "></div>
-  <div>
-    <HomeService/>
-  </div>
 
+      <div className="w-1/2 bg-black "></div>
+      <div>
+        <HomeService />
+      </div>
 
-<div>
-  <Pricing/>
-</div>
+      <div id="pricing">
+        <Pricing />
+      </div>
 
-<div>
-  <TermsAndConditions/>
-</div>
+      <div>
+        <TermsAndConditions />
+      </div>
     </>
   );
 };
